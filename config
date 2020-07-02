@@ -24,7 +24,7 @@ renders["world_biome"] = {
     "world": "world",
     "title": "Biome",
     "rendermode": [ClearBase(), BiomeOverlay()],
-    "overlay": "world_day"
+    "overlay": ["world_day"]
 }
 
 renders["nether"] = {

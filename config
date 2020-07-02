@@ -1,0 +1,46 @@
+worlds["world"] = "/home/overviewer/worlds/world"
+worlds["world_nether"] = "/home/overviewer/worlds/world_nether"
+worlds["world_the_end"] = "/home/overviewer/worlds/world_the_end"
+
+renders["world_day"] = {
+    "world": "world",
+    "title": "Day",
+    "rendermode": smooth_lighting
+}
+
+renders["world_night"] = {
+    "world": "world",
+    "title": "Night",
+    "rendermode": smooth_night
+}
+
+renders["world_cave"] = {
+    "world": "world",
+    "title": "Cave",
+    "rendermode": cave
+}
+
+renders["world_biome"] = {
+    "world": "world",
+    "title": "Biome",
+    "rendermode": [ClearBase(), BiomeOverlay()],
+    "overlay": "world_day"
+}
+
+renders["nether"] = {
+    "world": "world_nether",
+    "title": "Nether",
+    "rendermode": nether_smooth_lighting
+}
+
+renders["the_end"] = {
+    "world": "world_the_end",
+    "title": "The End"
+}
+
+end_lighting = [Base(), EdgeLines(), Lighting(strength=0.5)]
+end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
+
+outputdir = "/home/overviewer/render"
+texturepath = "/home/overviewer/textures"
+

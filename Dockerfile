@@ -22,7 +22,7 @@ WORKDIR /home/overviewer
 ADD config .
 
 WORKDIR /home/overviewer/textures
-ARG MINECRAFT_VERSION=1.16.1
+ARG MINECRAFT_VERSION=1.16.5
 ADD --chown=overviewer:overviewer https://overviewer.org/textures/$MINECRAFT_VERSION client.zip
 RUN unzip client.zip "assets/*"
 

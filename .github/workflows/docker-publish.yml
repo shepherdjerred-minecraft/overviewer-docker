@@ -50,8 +50,8 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            shepherdjerred/overviewer:${{ matrix.minecraft_version }}
-            ghcr.io/shepherdjerred-minecraft/overviewer:${{ matrix.minecraft_version }}
+            shepherdjerred/overviewer:${{ strategy.matrix.minecraft_version }}
+            ghcr.io/shepherdjerred-minecraft/overviewer:${{ strategy.matrix.minecraft_version }}
           build-args: MINECRAFT_VERSION=${{ strategy.matrix.minecraft_version }}
-          cache-from: type=registry,ref=shepherdjerred-minecraft/overviewer:${{ matrix.minecraft_version }}
+          cache-from: type=registry,ref=shepherdjerred-minecraft/overviewer:${{ strategy.matrix.minecraft_version }}
           cache-to: type=inline

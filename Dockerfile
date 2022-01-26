@@ -1,6 +1,5 @@
 FROM debian:latest
 
-
 RUN apt-get update \
   && apt-get install -y git unzip build-essential python3-pil python3-dev python3-numpy \
   && rm -rf /var/lib/apt/lists/*
@@ -22,7 +21,7 @@ WORKDIR /home/overviewer
 ADD config .
 
 WORKDIR /home/overviewer/textures
-ARG MINECRAFT_VERSION=1.16.5
+ARG MINECRAFT_VERSION=1.18.1
 ADD --chown=overviewer:overviewer https://overviewer.org/textures/$MINECRAFT_VERSION client.zip
 RUN unzip client.zip "assets/*"
 
